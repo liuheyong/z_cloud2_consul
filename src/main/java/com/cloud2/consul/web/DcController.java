@@ -1,5 +1,6 @@
 package com.cloud2.consul.web;
 
+import com.cloud2.commons.constants.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ public class DcController {
     @Autowired
     DiscoveryClient discoveryClient;
 
-    @GetMapping("/dc")
+    @GetMapping(Constants.CLOUD2 + "/dc")
     public String dc() {
         String services = "Services: " + discoveryClient.getServices();
         logger.info(services);
